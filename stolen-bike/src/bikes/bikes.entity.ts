@@ -5,7 +5,6 @@ const tableOptions = { timestamps: true };
 export class Bike extends Model<Bike> {
   @PrimaryKey
   @AutoIncrement
-  
   @Column(DataType.BIGINT)
   id: number;
   
@@ -16,7 +15,7 @@ export class Bike extends Model<Bike> {
   enquiryBy:string;
   
   @UpdatedAt
-  enquiryAt:string;
+  enquiryAt:Date;
   
   @CreatedAt
   createdAt: Date;

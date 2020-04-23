@@ -1,5 +1,6 @@
 import { Sequelize } from 'sequelize-typescript';
 import { Bike } from '../bikes/bikes.entity';
+import { Police } from '../police/police.entity';
 
 export const databaseProviders = [
     {
@@ -13,7 +14,7 @@ export const databaseProviders = [
               password: 'postgres',
               database: 'nest',
             });
-            sequelize.addModels([Bike]);
+            sequelize.addModels([Bike,Police]);
             await sequelize.sync();
             return sequelize;
         },

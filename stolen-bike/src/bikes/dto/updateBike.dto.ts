@@ -6,7 +6,7 @@ export class UpdateBikeDto {
 @ApiProperty()
 	readonly enquiryBy:string;
 @ApiProperty()
-	readonly enquiryAt:string;
+	readonly enquiryAt:Date;
 @ApiProperty()
 	readonly createdAt: Date;
 @ApiProperty()
