@@ -5,6 +5,7 @@ import { policeProviders } from './police.providers'
 
 @Module({
   controllers: [PoliceController],
-  providers: [PoliceService,...policeProviders]
+  providers: [PoliceService,...policeProviders],
+  exports:[PoliceService,...policeProviders]
 })
 export class PoliceModule {}

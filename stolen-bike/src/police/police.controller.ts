@@ -39,6 +39,8 @@ export class PoliceController {
         return this.policeService.findById(id);
     }
 
+    
+
     @Post()
     @ApiCreatedResponse({ type: PoliceEntity })
     @ApiBearerAuth()
@@ -49,7 +51,7 @@ export class PoliceController {
         return this.policeService.create(createPoliceDto);
     }
 
-    @Put(':id')
+    @Post(':id')
     @ApiOkResponse({ type: PoliceEntity })
     @ApiParam({ name: 'id', required: true })
     @ApiBearerAuth()

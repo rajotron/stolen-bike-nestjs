@@ -9,6 +9,7 @@
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
+    "lib": [ "es6" ],
     "incremental": true
   },
   "exclude": ["node_modules", "dist"]

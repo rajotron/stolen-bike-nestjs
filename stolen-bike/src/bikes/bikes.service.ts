@@ -8,7 +8,7 @@ import { Bike } from './bikes.entity';
 export class BikesService {
 
   constructor(
-    @Inject('BikesRepository') private readonly bikesRepository: typeof Bike
+    @Inject('BikesRepository') public readonly bikesRepository: typeof Bike
   ) {}
 
   async findAll(): Promise<Bike[]> {

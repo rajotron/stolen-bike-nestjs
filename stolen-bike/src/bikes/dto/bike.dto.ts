@@ -6,7 +6,7 @@ export class BikeDto {
 @ApiProperty()
    	readonly enquiryStatus:string;
 @ApiProperty()
-	readonly enquiryBy:string;
+	readonly enquiryBy:number;
 @ApiProperty()
 	readonly enquiryAt:Date;
 @ApiProperty()

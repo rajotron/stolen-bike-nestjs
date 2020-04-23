@@ -11,7 +11,7 @@ export class Police extends Model<Police> {
   @Column
   name:string;
 
-  @Column
+  @Column({defaultValue : 'IDLE'})
   status:string;
 
   @Column

@@ -8,12 +8,17 @@ import { Police } from './police.entity';
 export class PoliceService {
 
   constructor(
-    @Inject('PoliceRepository') private readonly policeRepository: typeof Police
+    @Inject('PoliceRepository') public readonly policeRepository: typeof Police
   ) {}
 
   async findAll(): Promise<Police[]> {
     return await this.policeRepository.findAll<Police>();
   }
+
+  async find(data:any): Promise<Police[]> {
+    return await this.policeRepository.findAll<Police>(data);
+  }
+
 
   async findById(ID: number): Promise<Police> {
     return await this.policeRepository.findByPk<Police>(ID);

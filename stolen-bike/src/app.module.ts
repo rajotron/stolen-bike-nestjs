@@ -7,6 +7,7 @@ import { PoliceModule } from './police/police.module';
 
 @Module({
   imports: [DatabaseModule, BikesModule, PoliceModule],
+  exports: [DatabaseModule, BikesModule, PoliceModule],
   controllers: [AppController],
   providers: [AppService],
 })

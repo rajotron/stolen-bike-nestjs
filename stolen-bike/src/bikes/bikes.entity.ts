@@ -8,11 +8,11 @@ export class Bike extends Model<Bike> {
   @Column(DataType.BIGINT)
   id: number;
   
-  @Column
+  @Column({ defaultValue: 'PENDING' })
   enquiryStatus:string;
   
   @Column
-  enquiryBy:string;
+  enquiryBy:number;
   
   @UpdatedAt
   enquiryAt:Date;
