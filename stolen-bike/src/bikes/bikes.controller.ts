@@ -124,7 +124,13 @@ export class BikesController {
         @Req() request,
         @Body() updateBikeDto: UpdateBikeDto,
     ) {
+        var result = {
+            updatedCase:{},
+            updatedPoliceOfficer:{},
+            newCaseEnquiry:{}
+        }
         var bikeUpdated = await this.bikesService.update(id, updateBikeDto);
+        result.updatedCase = bikeUpdated
 
         if (updateBikeDto['enquiryStatus'] == 'CLOSED') {
 
@@ -150,6 +156,7 @@ export class BikesController {
                 status = 'ON-DUTY';
                 newBikeForEnquiryJSON.enquiryBy = policeId;
                 var updateNewBikeForEnquiry = await this.bikesService.update(bikeId, newBikeForEnquiryJSON);
+                result.newCaseEnquiry=updateNewBikeForEnquiry;
             } else {
                 bikeId = 0;
                 status = 'IDLE'
@@ -161,6 +168,8 @@ export class BikesController {
             }
 
             var updatedPoliceJSON = await this.policeService.update(policeId, updatedPolice);
+            result.updatedPoliceOfficer = updatedPoliceJSON
         }
+        return result;
     }
 }
