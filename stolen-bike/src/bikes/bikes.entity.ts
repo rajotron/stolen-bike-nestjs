@@ -36,7 +36,7 @@ export class Bike extends Model<Bike> {
   modelno: string;
   
   @Column
-  when: string;
+  when: Date;
   
   @Column
   insurance_company:string;
@@ -48,13 +48,10 @@ export class Bike extends Model<Bike> {
   contactinfo:string;
   
   @Column
-  age:string;
+  dateOfPurchase:Date;
   
   @Column
   registrationno: string;
-  
-  @Column
-  type: string;
   
   @Column
   fromWhere: string;

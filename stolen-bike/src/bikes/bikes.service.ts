@@ -15,6 +15,10 @@ export class BikesService {
     return await this.bikesRepository.findAll<Bike>();
   }
 
+  async find(data:any): Promise<Bike[]> {
+    return await this.bikesRepository.findAll<Bike>(data);
+  }
+
   async findById(ID: number): Promise<Bike> {
     return await this.bikesRepository.findByPk<Bike>(ID);
   }

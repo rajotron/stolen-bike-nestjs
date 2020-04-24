@@ -10,7 +10,7 @@ export class CreateBikeDto {
 	@ApiProperty()
 	  readonly   modelno: string;
 	@ApiProperty()
-	  readonly   when: string;
+	  readonly   when: Date;
 	@ApiProperty()
 	  readonly   insurance_company:string;
 	@ApiProperty()
@@ -18,11 +18,9 @@ export class CreateBikeDto {
 	@ApiProperty()
 	  readonly   contactinfo:string;
 	@ApiProperty()
-	  readonly   age:string;
+	  readonly   dateOfPurchase:Date;
 	@ApiProperty()
 	  readonly   registrationno: string;
-	@ApiProperty()
-	  readonly   type: string;
 	@ApiProperty()
 	  readonly   fromWhere: string;
 }
