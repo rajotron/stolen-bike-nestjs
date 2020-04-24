@@ -1,0 +1,193 @@
+<!-- <span class="userLabel">User : {{username}}</span> -->
+ <div class="row">
+  <div class="col-lg-12 tableCss">
+    <span class="heading1">Stolen Bike Cases</span>
+    <button style="    position: absolute;
+    left: 41px;
+    top: 26px;" mat-raised-button color="primary" (click)="openDialog2()">Add New Case</button>
+<!--  <mat-table [dataSource]="dataSource" matSort>
+
+          <ng-container *ngFor="let column of displayedColumns" [matColumnDef]="column">
+            <mat-header-cell *matHeaderCellDef mat-sort-header > {{column}} </mat-header-cell>
+            <mat-cell *matCellDef="let row" data-label="agreementNum"> {{row[column] || ''}} </mat-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;">
+          </mat-row>
+        </mat-table> -->
+     <!--  </div></div> -->
+ <mat-table [dataSource]="dataSource" matSort >
+
+          <ng-container matColumnDef="id">
+            <mat-header-cell *matHeaderCellDef mat-sort-header > Id </mat-header-cell>
+            <mat-cell *matCellDef="let row" [style.color]="row.color" data-label="color"> {{row["id"]}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="enquiryStatus">
+            <mat-header-cell *matHeaderCellDef mat-sort-header > Status </mat-header-cell>
+            <mat-cell *matCellDef="let row" [style.color]="row.color" data-label="color"> {{row["enquiryStatus"]}}
+            </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="enquiryBy">
+            <mat-header-cell *matHeaderCellDef mat-sort-header > enquiryBy </mat-header-cell>
+            <mat-cell *matCellDef="let row" [style.color]="row.color" data-label="color">{{row["enquiryBy"]}}
+            </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="comments">
+            <mat-header-cell *matHeaderCellDef mat-sort-header > comments </mat-header-cell>
+            <mat-cell *matCellDef="let row" [style.color]="row.color" data-label="color">{{row["comments"]}}
+            </mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="vehicle_number">
+            <mat-header-cell *matHeaderCellDef mat-sort-header > vehicle_number </mat-header-cell>
+            <mat-cell *matCellDef="let row" [style.color]="row.color" data-label="color">{{row["vehicle_number"]}}
+            </mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="nameofowner">
+            <mat-header-cell *matHeaderCellDef mat-sort-header > nameofowner </mat-header-cell>
+            <mat-cell *matCellDef="let row" [style.color]="row.color" data-label="color">{{row["nameofowner"]}}
+            </mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="brandofbike">
+            <mat-header-cell *matHeaderCellDef mat-sort-header > brandofbike </mat-header-cell>
+            <mat-cell *matCellDef="let row" [style.color]="row.color" data-label="color">{{row["brandofbike"]}}
+            </mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="modelno">
+            <mat-header-cell *matHeaderCellDef mat-sort-header > modelno </mat-header-cell>
+            <mat-cell *matCellDef="let row" [style.color]="row.color" data-label="color">{{row["modelno"]}}
+            </mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="when">
+            <mat-header-cell *matHeaderCellDef mat-sort-header > when </mat-header-cell>
+            <mat-cell *matCellDef="let row" [style.color]="row.color" data-label="color">{{row["when"]|date:'dd/MM/yyyy, h:mm a'}}
+            </mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="insurance_company">
+            <mat-header-cell *matHeaderCellDef mat-sort-header > insurance_company </mat-header-cell>
+            <mat-cell *matCellDef="let row" [style.color]="row.color" data-label="color">{{row["insurance_company"]}}
+            </mat-cell>
+          </ng-container>
+           <ng-container matColumnDef="driving_license">
+            <mat-header-cell *matHeaderCellDef mat-sort-header > driving_license </mat-header-cell>
+            <mat-cell *matCellDef="let row" [style.color]="row.color" data-label="color">{{row["driving_license"]}}
+            </mat-cell>
+          </ng-container>
+           <ng-container matColumnDef="contactinfo">
+            <mat-header-cell *matHeaderCellDef mat-sort-header > contactinfo </mat-header-cell>
+            <mat-cell *matCellDef="let row" [style.color]="row.color" data-label="color">{{row["contactinfo"]}}
+            </mat-cell>
+          </ng-container>
+           <ng-container matColumnDef="dateOfPurchase">
+            <mat-header-cell *matHeaderCellDef mat-sort-header > dateOfPurchase </mat-header-cell>
+            <mat-cell *matCellDef="let row" [style.color]="row.color" data-label="color">{{row["dateOfPurchase"]|date:'dd/MM/yyyy, h:mm a'}}
+            </mat-cell>
+          </ng-container>
+           <ng-container matColumnDef="registrationno">
+            <mat-header-cell *matHeaderCellDef mat-sort-header > registrationno </mat-header-cell>
+            <mat-cell *matCellDef="let row" [style.color]="row.color" data-label="color">{{row["registrationno"]}}
+            </mat-cell>
+          </ng-container>
+           <ng-container matColumnDef="fromWhere">
+            <mat-header-cell *matHeaderCellDef mat-sort-header > fromWhere </mat-header-cell>
+            <mat-cell *matCellDef="let row" [style.color]="row.color" data-label="color">{{row["fromWhere"]}}
+            </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="createdAt">
+            <mat-header-cell *matHeaderCellDef mat-sort-header >createdAt</mat-header-cell>
+            <mat-cell *matCellDef="let row" data-label="createdAt">{{row["createdAt"]|date:'dd/MM/yyyy, h:mm a'}}</mat-cell>
+          </ng-container>
+
+           <ng-container matColumnDef="enquiryAt">
+            <mat-header-cell *matHeaderCellDef mat-sort-header >enquiryAt</mat-header-cell>
+            <mat-cell *matCellDef="let row" data-label="enquiryAt">{{row["enquiryAt"]|date:'dd/MM/yyyy, h:mm a'}}</mat-cell>
+          </ng-container>
+
+
+          <!-- <ng-container matColumnDef="View Assets">
+            <mat-header-cell *matHeaderCellDef mat-sort-header > View Assets </mat-header-cell>
+            <mat-cell *matCellDef="let row" [style.color]="row.color" data-label="color"> <button mat-raised-button color="primary" (click)='openDialog2(row)' class="mr-1">VIEW</button> </mat-cell>
+          </ng-container> -->
+
+          <ng-container matColumnDef="Action">
+            <mat-header-cell *matHeaderCellDef mat-sort-header > Action </mat-header-cell>
+            <mat-cell *matCellDef="let row" [style.color]="row.color" data-label="color"> <button mat-raised-button color="primary" (click)='openDialog(row)' class="mr-1">EDIT</button> </mat-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;">
+          </mat-row>
+        </mat-table>
+      </div>
+        <div class="col-lg-12 tableCss">
+    <span class="heading1">Police Officers Info</span>
+    <button style="    position: absolute;
+    left: 41px;
+    top: 26px;" mat-raised-button color="primary" (click)="openDialog3()">Add New Police Officer</button>
+<!--  <mat-table [dataSource]="dataSource" matSort>
+
+          <ng-container *ngFor="let column of displayedColumns" [matColumnDef]="column">
+            <mat-header-cell *matHeaderCellDef mat-sort-header > {{column}} </mat-header-cell>
+            <mat-cell *matCellDef="let row" data-label="agreementNum"> {{row[column] || ''}} </mat-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;">
+          </mat-row>
+        </mat-table> -->
+     <!--  </div></div> -->
+ <mat-table [dataSource]="dataSource1" matSort >
+
+          <ng-container matColumnDef="id">
+            <mat-header-cell *matHeaderCellDef mat-sort-header > Id </mat-header-cell>
+            <mat-cell *matCellDef="let row" [style.color]="row.color" data-label="color"> {{row["id"]}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef mat-sort-header > Name </mat-header-cell>
+            <mat-cell *matCellDef="let row" [style.color]="row.color" data-label="color"> {{row["name"]}}
+            </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="status">
+            <mat-header-cell *matHeaderCellDef mat-sort-header > status </mat-header-cell>
+            <mat-cell *matCellDef="let row" [style.color]="row.color" data-label="color">{{row["status"]}}
+            </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="currentCaseId">
+            <mat-header-cell *matHeaderCellDef mat-sort-header > currentCaseId </mat-header-cell>
+            <mat-cell *matCellDef="let row" [style.color]="row.color" data-label="color">{{row["currentCaseId"]}}
+            </mat-cell>
+          </ng-container>
+          
+          <ng-container matColumnDef="createdAt">
+            <mat-header-cell *matHeaderCellDef mat-sort-header >createdAt</mat-header-cell>
+            <mat-cell *matCellDef="let row" data-label="createdAt">{{row["createdAt"]|date:'dd/MM/yyyy, h:mm a'}}</mat-cell>
+          </ng-container>
+
+           <ng-container matColumnDef="lastUpdated">
+            <mat-header-cell *matHeaderCellDef mat-sort-header >lastUpdated</mat-header-cell>
+            <mat-cell *matCellDef="let row" data-label="lastUpdated">{{row["lastUpdated"]|date:'dd/MM/yyyy, h:mm a'}}</mat-cell>
+          </ng-container>
+
+
+          <!-- <ng-container matColumnDef="View Assets">
+            <mat-header-cell *matHeaderCellDef mat-sort-header > View Assets </mat-header-cell>
+            <mat-cell *matCellDef="let row" [style.color]="row.color" data-label="color"> <button mat-raised-button color="primary" (click)='openDialog2(row)' class="mr-1">VIEW</button> </mat-cell>
+          </ng-container> -->
+
+          <ng-container matColumnDef="Action">
+            <mat-header-cell *matHeaderCellDef mat-sort-header > Action </mat-header-cell>
+            <mat-cell *matCellDef="let row" [style.color]="row.color" data-label="color"> <button mat-raised-button color="primary" (click)='openDialog4(row)' class="mr-1">EDIT</button> </mat-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="displayedColumns1"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns1;">
+          </mat-row>
+        </mat-table>
+      </div></div>

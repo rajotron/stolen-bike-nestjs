@@ -1,0 +1,88 @@
+<div class="container" >
+<div class="row justify-content-center"  style="height: 100vh" >
+  <div class="col-12" > 
+    <div class="wrapper1">
+<h3 mat-dialog-title>Update Stolen Bike</h3>
+<h4>Vehicle Number:<span class="red">{{data.vehicle_number}}</span>, ID: <span class="red">{{data.id}}</span></h4>
+<div mat-dialog-content>
+  
+ <p class="labels">enquiryStatus</p> 
+  <mat-form-field class="formField" style="margin-bottom: 5px;">
+ <input matInput [(ngModel)]="data.enquiryStatus">
+ <mat-hint style=" background: #ffff0040;
+    padding: 5px;
+    font-size: 13px;
+    border-radius: 9px;">PENDING, IN PROGRESS, CLOSED</mat-hint>
+ </mat-form-field>
+
+ <p class="labels" style="margin-top:37px;">enquiryBy</p>
+ <mat-form-field class="formField">
+ <input matInput [(ngModel)]="data.enquiryBy">
+ </mat-form-field>
+
+ <p class="labels">comments</p>
+ <mat-form-field class="formField">
+ <input matInput [(ngModel)]="data.comments">
+ </mat-form-field>
+
+ <p class="labels">vehicle_number</p>
+ <mat-form-field class="formField">
+ <input matInput [(ngModel)]="data.vehicle_number">
+ </mat-form-field>
+
+ <p class="labels">nameofowner</p>
+ <mat-form-field class="formField">
+ <input matInput [(ngModel)]="data.nameofowner">
+ </mat-form-field>
+
+ <p class="labels">brandofbike</p>
+ <mat-form-field class="formField">
+ <input matInput [(ngModel)]="data.brandofbike">
+ </mat-form-field>
+
+ <p class="labels">modelno</p>
+ <mat-form-field class="formField">
+ <input matInput [(ngModel)]="data.modelno">
+ </mat-form-field>
+
+ <p class="labels">when</p>
+ <mat-form-field class="formField">
+ <input matInput [(ngModel)]="data.when">
+ </mat-form-field>
+
+ <p class="labels">insurance_company</p>
+ <mat-form-field class="formField">
+ <input matInput [(ngModel)]="data.insurance_company">
+ </mat-form-field>
+
+ <p class="labels">driving_license</p>
+ <mat-form-field class="formField">
+ <input matInput [(ngModel)]="data.driving_license">
+ </mat-form-field>
+
+ <p class="labels">contactinfo</p>
+ <mat-form-field class="formField">
+ <input matInput [(ngModel)]="data.contactinfo">
+ </mat-form-field>
+
+ <p class="labels">dateOfPurchase</p>
+ <mat-form-field class="formField">
+ <input matInput [(ngModel)]="data.dateOfPurchase">
+ </mat-form-field>
+
+ <p class="labels">registrationno</p>
+ <mat-form-field class="formField">
+ <input matInput [(ngModel)]="data.registrationno">
+ </mat-form-field>
+
+ <p class="labels">fromWhere</p>
+ <mat-form-field class="formField">
+ <input matInput [(ngModel)]="data.fromWhere">
+ </mat-form-field>
+
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Close</button>
+  <button mat-button (click)="update()" cdkFocusInitial>Update</button>
+</div>
+</div></div></div></div>

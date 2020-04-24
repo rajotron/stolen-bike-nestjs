@@ -1,0 +1,40 @@
+span.userLabel {
+        position: fixed;
+    /* float: right; */
+    top: 80px;
+    margin-right: 21px;
+    right: 0;
+    background: black;
+    font-weight: 700;
+    /* left: -22px; */
+    border-radius: 31px;
+    padding: 17px;
+    z-index: 10;
+    color: white;
+}
+
+.tableCss{
+    background: #ffffffd1;
+    width: 80%;
+    top: 64px;
+    /* z-index: -1; */
+    position: relative;
+    margin: auto;
+}
+
+span.heading1 {
+    color: white;
+    display: block;
+    text-align: center;
+    background-color: #4486ba;
+    /* padding-left: 20px; */
+    width: 100%;
+    padding: 12px;
+    position: relative;
+    font-weight: 700;
+    font-size: 36px;
+}
+ mat-header-cell{
+    font-weight: bold;
+ }
+

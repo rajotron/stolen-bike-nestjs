@@ -1,0 +1,20 @@
+<div class="container" >
+<div class="row justify-content-center"  style="height: 100vh" >
+  <div class="col-12" > 
+    <div class="wrapper1">
+<h3 mat-dialog-title>Add New Police Officer</h3>
+<div mat-dialog-content>
+  
+
+ <p class="labels">name</p>
+ <mat-form-field class="formField">
+ <input matInput [(ngModel)]="data.name">
+ </mat-form-field>
+
+
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Close</button>
+  <button mat-button (click)="createNewPoliceOfficer()" cdkFocusInitial>CREATE</button>
+</div>
+</div></div></div></div>

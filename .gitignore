@@ -1,5 +1,7 @@
 /stolen-bike/dist
 /stolen-bike/node_modules
+/Stolen_Bike_UI/dist
+/Stolen-Bike_UI/node_modules
 # Logs
 logs
 *.log
